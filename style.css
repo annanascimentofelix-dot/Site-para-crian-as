@@ -1,0 +1,382 @@
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredoka', cursive, sans-serif;
+}
+
+:root {
+    --primary: #ff4757;
+    --secondary: #1e90ff;
+    --accent: #ffa502;
+    --green: #2ed573;
+    --purple: #9b59b6;
+    --bg-light: #fff9e6;
+    --bg-alt: #eccc681a;
+    --text-dark: #2f3542;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* Cabeçalho */
+.header {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #ffeaa7;
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    color: white;
+    padding: 4rem 5%;
+    text-align: center;
+    position: relative;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+/* Elementos Flutuantes Animação */
+.floating {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: float 4s ease-in-out infinite alternate;
+}
+
+.star-1 { top: 15%; left: 8%; animation-delay: 0s; }
+.bubble-1 { top: 60%; left: 12%; animation-delay: 1s; }
+.rocket-1 { top: 20%; right: 10%; animation-delay: 2s; }
+.cloud-1 { bottom: 15%; right: 15%; animation-delay: 1.5s; }
+
+@keyframes float {
+    from { transform: translateY(0px) rotate(0deg); }
+    to { transform: translateY(-20px) rotate(15deg); }
+}
+
+/* Botões Globais */
+.btn {
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-primary { background-color: var(--accent); color: white; }
+.btn-secondary { background-color: var(--secondary); color: white; }
+.btn-danger { background-color: var(--primary); color: white; }
+.btn-small { padding: 8px 16px; font-size: 0.95rem; background-color: var(--green); color: white; }
+
+/* Seções */
+.section {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.alt-bg {
+    background-color: var(--bg-alt);
+    border-radius: 30px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+/* Lousa Mágica */
+.canvas-container {
+    background: white;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.color-palette {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.color-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 3px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.color-btn.active, .color-btn:hover {
+    transform: scale(1.2);
+    border-color: #2f3542;
+}
+
+canvas {
+    border: 4px dashed #74b9ff;
+    border-radius: 15px;
+    cursor: crosshair;
+    background-color: #ffffff;
+    touch-action: none;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Piano Musical */
+.piano-keyboard {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.key {
+    width: 80px;
+    height: 180px;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.key:active, .key.playing {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.key.red { background: #ff4757; }
+.key.orange { background: #ffa502; }
+.key.yellow { background: #eccc68; color: #333; }
+.key.green { background: #2ed573; }
+.key.cyan { background: #17c0eb; }
+.key.blue { background: #1e90ff; }
+.key.purple { background: #9b59b6; }
+.key.pink { background: #ff78ae; }
+
+/* Cards de Histórias */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Seção de Charadas */
+.joke-box {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.joke-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.hidden-answer {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--green);
+    margin: 20px 0;
+    min-height: 30px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.hidden-answer.show {
+    opacity: 1;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    line-height: 1.6;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: #ffffff;
+    margin-top: 3rem;
+    border-top: 3px stroke var(--bg-alt);
+    color: #888;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .key {
+        width: 45px;
+        height: 130px;
+        font-size: 0.8rem;
+    }
+}

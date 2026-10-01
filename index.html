@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Mágico Kids 🎈</title>
+    <!-- Fonte divertida do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho / Navegação -->
+    <header class="header">
+        <div class="logo">
+            <span>✨</span> Mundo Mágico <span>Kids</span> 🎈
+        </div>
+        <nav class="nav">
+            <a href="#inicio" class="nav-link active">Início</a>
+            <a href="#lousa" class="nav-link">Lousa Mágica</a>
+            <a href="#piano" class="nav-link">Sons & Cores</a>
+            <a href="#historias" class="nav-link">Histórias</a>
+            <a href="#piadas" class="nav-link">Charadas</a>
+        </nav>
+    </header>
+
+    <!-- Banner Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="bounce-title">Um Lugar Mágico para Brincar e Aprender! 🚀</h1>
+            <p>Desenhe, crie músicas, leia historinhas encantadas e divirta-se de montão!</p>
+            <a href="#lousa" class="btn btn-primary">Começar a Brincadeira 🎨</a>
+        </div>
+        <div class="hero-decor">
+            <span class="floating star-1">⭐</span>
+            <span class="floating bubble-1">🫧</span>
+            <span class="floating rocket-1">🚀</span>
+            <span class="floating cloud-1">☁️</span>
+        </div>
+    </section>
+
+    <!-- Seção 1: Lousa Mágica de Desenho -->
+    <section id="lousa" class="section">
+        <div class="section-title">
+            <h2>🎨 Lousa Mágica de Desenhar</h2>
+            <p>Solte a sua imaginação! Escolha as cores e crie desenhos incríveis.</p>
+        </div>
+
+        <div class="canvas-container">
+            <div class="toolbar">
+                <div class="tool-group">
+                    <label>Cores:</label>
+                    <div class="color-palette">
+                        <button class="color-btn active" style="background: #ff4757;" data-color="#ff4757"></button>
+                        <button class="color-btn" style="background: #2ed573;" data-color="#2ed573"></button>
+                        <button class="color-btn" style="background: #1e90ff;" data-color="#1e90ff"></button>
+                        <button class="color-btn" style="background: #ffa502;" data-color="#ffa502"></button>
+                        <button class="color-btn" style="background: #9b59b6;" data-color="#9b59b6"></button>
+                        <button class="color-btn" style="background: #2f3542;" data-color="#2f3542"></button>
+                        <input type="color" id="customColor" value="#ff4757" title="Escolha outra cor">
+                    </div>
+                </div>
+
+                <div class="tool-group">
+                    <label for="brushSize">Pincel:</label>
+                    <input type="range" id="brushSize" min="2" max="30" value="8">
+                </div>
+
+                <div class="tool-group">
+                    <button id="eraserBtn" class="btn btn-secondary">✏️ Borracha</button>
+                    <button id="clearBtn" class="btn btn-danger">🗑️ Limpar Tudo</button>
+                </div>
+            </div>
+
+            <canvas id="paintCanvas" width="800" height="450"></canvas>
+        </div>
+    </section>
+
+    <!-- Seção 2: Piano e Sons Divertidos -->
+    <section id="piano" class="section alt-bg">
+        <div class="section-title">
+            <h2>🎹 Piano Musical das Cores</h2>
+            <p>Clique nas teclas para ouvir sons musicais e ver as cores brilharem!</p>
+        </div>
+
+        <div class="piano-keyboard">
+            <button class="key red" data-note="261.63">Do 🔴</button>
+            <button class="key orange" data-note="293.66">Ré 🟠</button>
+            <button class="key yellow" data-note="329.63">Mi 🟡</button>
+            <button class="key green" data-note="349.23">Fá 🟢</button>
+            <button class="key cyan" data-note="392.00">Sol 🩵</button>
+            <button class="key blue" data-note="440.00">Lá 🔵</button>
+            <button class="key purple" data-note="493.88">Si 🟣</button>
+            <button class="key pink" data-note="523.25">Dó High 🩷</button>
+        </div>
+    </section>
+
+    <!-- Seção 3: Histórias Encantadas -->
+    <section id="historias" class="section">
+        <div class="section-title">
+            <h2>📚 Cantinho das Histórias</h2>
+            <p>Escolha uma história para ler com seus pais ou amigos!</p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">🦄</div>
+                <h3>O Unicórnio Curioso</h3>
+                <p>Era uma vez um pequeno unicórnio que adorava descobrir por que o arco-íris tinha tantas cores brilhantes...</p>
+                <button class="btn btn-small" onclick="lerHistoria('unicornio')">Ler História 📖</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>O Robô Amigo</h3>
+                <p>Bip-Bop era um robô de brinquedo que aprendeu a dançar e ensinar matemática brincando!</p>
+                <button class="btn btn-small" onclick="lerHistoria('robo')">Ler História 📖</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🐉</div>
+                <h3>O Dragão que Tinha Medo do Escuro</h3>
+                <p>Fumaça era um dragãozinho fofo que precisava de uma estrelinha guia para dormir em paz.</p>
+                <button class="btn btn-small" onclick="lerHistoria('dragao')">Ler História 📖</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Charadas e Piadas -->
+    <section id="piadas" class="section alt-bg">
+        <div class="section-title">
+            <h2>🤪 Charadas Engraçadas</h2>
+            <p>Tente adivinhar a resposta antes de clicar no botão!</p>
+        </div>
+
+        <div class="joke-box">
+            <h3 id="jokeQuestion">O que é, o que é: cai em pé e corre deitado?</h3>
+            <p id="jokeAnswer" class="hidden-answer">A chuva! 🌧️</p>
+            <button id="revealBtn" class="btn btn-primary">Ver Resposta 🤔</button>
+            <button id="nextJokeBtn" class="btn btn-secondary">Outra Charada ➡️</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>Feito com ❤️ para todas as crianças do mundo! ✨</p>
+        <p>© Mundo Mágico Kids - Diversão garantida!</p>
+    </footer>
+
+    <!-- Modal de Leitura de História -->
+    <div id="storyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Título</h2>
+            <div id="modalBody">Conteúdo da história...</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
